@@ -4,7 +4,7 @@ WORKDIR /src
 
 COPY . .
 
-RUN dotnet publish ./VgcCollege.Web/VgcCollege.Web.csproj -c Release -o /out
+RUN dotnet publish VgcCollege.Web.csproj -c Release -o /out
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 
