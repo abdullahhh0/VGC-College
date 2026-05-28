@@ -1,17 +1,20 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+
+COPY . .
+
+WORKDIR /src/VgcCollege.Web
+
+RUN dotnet publish VgcCollege.Web.csproj -c Release -o /out
+
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
+
 WORKDIR /app
 
-COPY . ./
+COPY --from=build /out .
 
-RUN dotnet publish VgcCollege.Web.csproj -c Release -o out
+ENV ASPNETCORE_URLS=http://+:10000
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0
-WORKDIR /app
-
-COPY --from=build /app/out .
-
-EXPOSE 8080
-
-ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 10000
 
 ENTRYPOINT ["dotnet", "VgcCollege.Web.dll"]
