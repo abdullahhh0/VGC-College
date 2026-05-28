@@ -1,0 +1,27 @@
+@model IEnumerable<VgcCollege.Web.Models.Assignment>
+@{ ViewData["Title"] = "Assignments"; }
+
+<h2>Assignments</h2>
+<a asp-action="CreateAssignment" class="btn btn-primary mb-3">+ New Assignment</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Course</th>
+        <th>Max Score</th>
+        <th>Due Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.Title</td>
+            <td>@a.Course.Name</td>
+            <td>@a.MaxScore</td>
+            <td>@a.DueDate.ToShortDateString()</td>
+        </tr>
+    }
+    </tbody>
+</table>

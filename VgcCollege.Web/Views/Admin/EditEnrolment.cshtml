@@ -1,0 +1,18 @@
+@model VgcCollege.Web.Models.CourseEnrolment
+@{ ViewData["Title"] = "Edit Enrolment"; }
+
+<h2>Edit Enrolment</h2>
+<form asp-action="EditEnrolment" method="post">
+    <input type="hidden" asp-for="Id" />
+    <p><strong>Student:</strong> @Model.StudentProfile.Name</p>
+    <p><strong>Course:</strong> @Model.Course.Name</p>
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select name="Status" class="form-select">
+            <option value="Active" selected="@(Model.Status == "Active")">Active</option>
+            <option value="Inactive" selected="@(Model.Status == "Inactive")">Inactive</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Enrolments" class="btn btn-secondary">Cancel</a>
+</form>

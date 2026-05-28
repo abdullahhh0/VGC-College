@@ -1,0 +1,25 @@
+@{ ViewData["Title"] = "Add Attendance"; }
+
+<h2>Add Attendance</h2>
+<form asp-action="CreateAttendance" method="post">
+    <div class="mb-3">
+        <label class="form-label">Enrolment</label>
+        <select name="CourseEnrolmentId" class="form-select">
+            @foreach (var e in ViewBag.Enrolments)
+            {
+                <option value="@e.Id">@e.StudentProfile.Name - @e.Course.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Week Number</label>
+        <input name="WeekNumber" type="number" class="form-control" />
+    </div>
+    <div class="mb-3 form-check">
+        
+        <input name="Present" type="checkbox" class="form-check-input" value="true" />
+        <label class="form-check-label">Present</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Attendance" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,28 @@
+@{ ViewData["Title"] = "Add Exam"; }
+
+<h2>Add Exam</h2>
+<form asp-action="CreateExam" method="post">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input name="Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Course</label>
+        <select name="CourseId" class="form-select">
+            @foreach (var c in ViewBag.Courses)
+            {
+                <option value="@c.Id">@c.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input name="Date" type="date" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Max Score</label>
+        <input name="MaxScore" type="number" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Exams" class="btn btn-secondary">Cancel</a>
+</form>

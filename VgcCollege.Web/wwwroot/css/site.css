@@ -1,0 +1,165 @@
+html {
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@media (min-width: 768px) {
+  html { font-size: 16px; }
+}
+
+body {
+  background-color: #f5f6fa;
+  margin-bottom: 60px;
+}
+
+/* Hero */
+.hero-section {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 80px 0;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  margin-bottom: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #0f0c29, #302b63) !important;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #0f0c29, #302b63) !important;
+  color: #aaa !important;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* Stat Cards */
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Role Cards */
+.role-card {
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+  border-top: 4px solid transparent;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+}
+
+.admin-card { border-top-color: #4361ee; }
+.faculty-card { border-top-color: #06d6a0; }
+.student-card { border-top-color: #f77f00; }
+
+.role-icon {
+  font-size: 2.5rem;
+}
+
+/* Badges */
+.badge-custom {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-admin { background: #e8ecff; color: #4361ee; }
+.badge-faculty { background: #e8fff8; color: #06d6a0; }
+.badge-student { background: #fff3e0; color: #f77f00; }
+
+/* Branch Cards */
+.branch-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+}
+
+.branch-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #302b63, #4361ee);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Tables */
+.table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+}
+
+.table thead {
+  background: linear-gradient(135deg, #0f0c29, #302b63);
+  color: white;
+}
+
+.table thead th {
+  border: none;
+  padding: 14px 16px;
+  font-weight: 600;
+}
+
+.table tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #4361ee, #302b63);
+  border: none;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #302b63, #4361ee);
+}
+
+.btn-warning, .btn-danger, .btn-secondary {
+  border-radius: 8px;
+}
+
+/* Forms */
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1.5px solid #dee2e6;
+  padding: 10px 14px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #4361ee;
+  box-shadow: none;
+}
+
+h2 {
+  color: #1a1a2e;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+section:has(h3) {
+  display: none !important;
+}

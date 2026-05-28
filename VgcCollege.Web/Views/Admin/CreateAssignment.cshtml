@@ -1,0 +1,29 @@
+@model VgcCollege.Web.Models.Assignment
+@{ ViewData["Title"] = "Create Assignment"; }
+
+<h2>Create Assignment</h2>
+<form asp-action="CreateAssignment" method="post">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Course</label>
+        <select asp-for="CourseId" class="form-select">
+            @foreach (var c in ViewBag.Courses)
+            {
+                <option value="@c.Id">@c.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Max Score</label>
+        <input asp-for="MaxScore" type="number" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Due Date</label>
+        <input asp-for="DueDate" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Assignments" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,17 @@
+@model IEnumerable<VgcCollege.Web.Models.ExamResult>
+@{ ViewData["Title"] = "My Exam Results"; }
+
+<h2>My Exam Results</h2>
+<table class="table">
+    <thead><tr><th>Exam</th><th>Score</th><th>Grade</th></tr></thead>
+    <tbody>
+    @foreach (var r in Model)
+    {
+        <tr>
+            <td>@r.Exam.Title</td>
+            <td>@r.Score</td>
+            <td>@r.Grade</td>
+        </tr>
+    }
+    </tbody>
+</table>
